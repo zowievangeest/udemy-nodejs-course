@@ -11,7 +11,15 @@ app.use('/', express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs');
 
-mongoose.connect(config.getDbConnectionString());
+mongoose.connect(config.getDbConnectionString(), {useNewUrlParser: true}, error => {
+    if (error) {
+        console.log('Unable to connect to database')
+        throw error
+    } else {
+        console.log('Connected to MongoDB!')
+    }
+})
+
 setupController(app);
 apiController(app);
 

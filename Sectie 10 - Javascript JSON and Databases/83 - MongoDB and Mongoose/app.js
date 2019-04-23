@@ -2,7 +2,14 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://testUser:<password>@nodecourse-9hxka.mongodb.net/test?retryWrites=true')
+mongoose.connect('mongodb://localhost:27017/eindopdracht', {useNewUrlParser: true}, error => {
+    if (error) {
+        console.log('Unable to connect to database')
+        throw error
+    } else {
+        console.log('Connected to MongoDB!')
+    }
+})
 
 const Schema = mongoose.Schema;
 

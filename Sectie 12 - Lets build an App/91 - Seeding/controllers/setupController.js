@@ -3,33 +3,27 @@ const Todos = require('../models/todoModel');
 module.exports = function(app) {
 
    app.get('/api/setupTodos', function(req, res) {
-
-       console.log(req);
-       console.log(res);
-       // seed database
        const starterTodos = [
            {
-               username: 'test',
-               todo: 'Buy milk',
+               username: 'zowie',
+               todo: 'Koop melk',
                isDone: false,
                hasAttachment: false
            },
            {
-               username: 'test',
-               todo: 'Feed dog',
+               username: 'zowie',
+               todo: 'koop drinken',
                isDone: false,
                hasAttachment: false
            },
            {
-               username: 'test',
-               todo: 'Learn Node',
-               isDone: false,
+               username: 'zowie',
+               todo: 'Leer VueJS & Node',
+               isDone: true,
                hasAttachment: false
            }
        ];
        Todos.create(starterTodos, function(err, results) {
-           console.log(err);
-           console.log(results);
            res.send(results);
        });
    });

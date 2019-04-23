@@ -7,12 +7,12 @@ import { Todo } from './todo';
 
 @Injectable()
 export class TodoService {
-  
+
   private headers = new Headers({'Content-Type': 'application/json'});
-  private todosApiUrl = '/api/todos/test';
-  
+  private todosApiUrl = '/api/todos/zowie';
+
   constructor(private http: Http) { }
-    
+
   getTodos(): Promise<Todo[]> {
     return this.http.get(this.todosApiUrl)
                .toPromise()
