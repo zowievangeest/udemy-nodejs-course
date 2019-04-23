@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://testUser:<password>@nodecourse-9hxka.mongodb.net/test?retryWrites=true')
+mongoose.connect('mongodb://testUser:<password>@nodecourse-9hxka.mongodb.net/test?retryWrites=true')
 
 const Schema = mongoose.Schema;
 
